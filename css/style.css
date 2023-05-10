@@ -1567,12 +1567,6 @@ body.lock {
   opacity: 0;
 }
 
-@media (max-width: 450px) {
-  .popup__content {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
 .popup.open .popup__content {
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateZ(0deg);
   opacity: 1;
@@ -1610,7 +1604,7 @@ body.lock {
 @media (max-width: 450px) {
   .popup__form p {
     margin-bottom: calc(20px + 10 * (100vw - 320px) / 540);
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 .popup-input {
@@ -1644,9 +1638,17 @@ body.lock {
 
 .popup-price__content {
   max-width: 1000px;
+  padding: 50px 35px;
+}
+@media (max-width: 450px) {
+  .popup-price__content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .modal__block-full table {
+  table-layout: fixed;
   width: 100%;
 }
 @media (max-width: 768px) {
@@ -1665,6 +1667,9 @@ body.lock {
   font-family: "Gilroy-Bold", sans-serif;
   color: var(--clr1);
   font-size: 18px;
+}
+.modal__block-full table th:first-child {
+  width: 30%;
 }
 .modal__block-full table td {
   text-align: center;
@@ -1761,10 +1766,22 @@ body.lock {
   letter-spacing: 1px;
   font-size: 18px;
   margin-bottom: 30px;
+  position: relative;
+  padding-left: 20px;
 }
 .clean__subtext span {
   color: var(--clr1);
   font-family: "Gilroy-Bold", sans-serif;
+}
+.clean__subtext::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background-color: var(--clr2);
+  border-radius: 50%;
 }
 .clean__block {
   display: grid;
@@ -1772,17 +1789,41 @@ body.lock {
   padding: 20px;
   background-color: #f8fafb;
   gap: 20px;
+  position: relative;
+}
+.clean__block::before {
+  content: "";
+  position: absolute;
+  background-image: url("../img/icon/eco.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: -25px;
+  right: -5px;
+  width: 50px;
+  height: 50px;
+  transform: rotate(350deg);
 }
 @media (max-width: 650px) {
   .clean__block {
     grid-template-columns: repeat(1, 1fr);
-    padding: 20px 10px;
+    padding: 30px 10px 20px;
+  }
+}
+@media (max-width: 400px) {
+  .clean__block {
+    gap: 30px;
   }
 }
 .clean__item {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+@media (max-width: 400px) {
+  .clean__item {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 .clean__img {
   width: 60px;
@@ -1791,6 +1832,13 @@ body.lock {
   font-size: 16px;
   margin-bottom: 0;
   text-align: left;
+  color: var(--clr1);
+  font-family: "Gilroy-Bold", sans-serif;
+}
+@media (max-width: 400px) {
+  .clean__text {
+    text-align: center;
+  }
 }
 .clean__body {
   position: relative;
