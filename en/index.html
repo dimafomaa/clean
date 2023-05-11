@@ -860,6 +860,11 @@
                 <a href="#" class="popup__close close-popup">&#10006</a>
                 <div class="popup__form">
                     <h2>Leave a request</h2>
+
+                    <div class="loading-icon">
+                        <img src="../img/icon/loading.gif" alt="Loading">
+                    </div>
+                    
                     <form action="send-mail.php" class="form-cons" id="form-popup">
                         <input type="hidden" name="formData" value="Запит з сайту">
                         <div class="popup__input-name">
@@ -868,8 +873,13 @@
                         <div class="popup__input-tel">
                             <input class="popup-input"  type="tel" name="tel" placeholder="Phone number" required>
                         </div>
-                        <div class="popup__input-mail">
-                            <input class="popup-input"  type="email" name="email" placeholder="Your email" required>
+                        <div class="popup__input-select"> 
+                            <select name="clean" class="popup-input">
+                                <option name="Cleaning and disinfection" value="Cleaning and disinfection" selected>Cleaning and disinfection</option>
+                                <option name="One-Time Cleans" value="One-Time Cleans">One-Time Cleans</option>
+                                <option name="Dry Vapor Cleaning & Sanitizing" value="Dry Vapor Cleaning & Sanitizing">Dry Vapor Cleaning & Sanitizing</option>
+                                <option name="Move In / Move Out Cleaning" value="Move In / Move Out Cleaning">Move In / Move Out Cleaning</option>
+                            </select>
                         </div>
                         <button class="popup__btn btn" type="submit">Send</button>
                     </form>
@@ -893,6 +903,8 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+
+    <script src="../js/select.js"></script>
     <script src="../js/script.js"></script>
 </body>
 </html>
