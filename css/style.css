@@ -1566,6 +1566,11 @@ body.lock {
   transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateZ(-26deg);
   opacity: 0;
 }
+@media (max-width: 450px) {
+  .popup__content {
+    padding: 50px 25px;
+  }
+}
 
 .popup.open .popup__content {
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateZ(0deg);
