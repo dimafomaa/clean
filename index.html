@@ -857,6 +857,11 @@
                 <a href="#" class="popup__close close-popup">&#10006</a>
                 <div class="popup__form">
                     <h2>Залишити запит</h2>
+
+                    <div class="loading-icon">
+                        <img src="img/icon/loading.gif" alt="Loading">
+                    </div>
+                    
                     <form action="send-mail.php" class="form-cons" id="form-popup">
                         <input type="hidden" name="formData" value="Запит з сайту">
                         <div class="popup__input-name">
@@ -865,10 +870,15 @@
                         <div class="popup__input-tel">
                             <input class="popup-input"  type="tel" name="tel" placeholder="Телефон" required>
                         </div>
-                        <div class="popup__input-mail">
-                            <input class="popup-input"  type="email" name="email" placeholder="Email" required>
+                        <div class="popup__input-select"> 
+                            <select name="clean" class="popup-input">
+                                <option name="Прибирання та дезінфекція" value="Прибирання та дезінфекція" selected>Прибирання та дезінфекція</option>
+                                <option name="Одноразове прибирання" value="Одноразове прибирання">Одноразове прибирання</option>
+                                <option name="Чистка та дезінфекція" value="Чистка та дезінфекція">Чистка та дезінфекція</option>
+                                <option name="Прибирання заїзду/виїзду" value="Прибирання заїзду/виїзду">Прибирання заїзду/виїзду</option>
+                            </select>
                         </div>
-                        <button class="popup__btn btn" type="submit">Відправити</button>
+                        <button class="popup__btn btn" type="submit">Надіслати</button>
                     </form>
                 </div>
             </div>
@@ -891,6 +901,8 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+    
+    <script src="js/select.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

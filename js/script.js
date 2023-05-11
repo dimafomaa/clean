@@ -10,6 +10,9 @@ $(document).ready(function() {
 		form.find('button[type="submit"]').prop('disabled', true);
 		
 		
+		let loadingIcon = document.querySelector('.loading-icon');
+		loadingIcon.classList.add('active'); // show loading icon
+		
 		// отправка формы с помощью AJAX
 		$.ajax({
 			url: 'send-mail.php',
@@ -20,12 +23,19 @@ $(document).ready(function() {
 				// Открываем модальное окно благодарности после успешной отправки формы
 				const thankPopup = document.getElementById('modal-thank');
 				popupOpen(thankPopup);
+				
+				
+				loadingIcon.classList.remove('active');
+				
 			},
+			
+			
 			
 			complete: function() {
 				// разблокировка кнопки отправки формы после завершения AJAX-запроса
 				form.find('button[type="submit"]').prop('disabled', false);
 			}
+			
 		});
 	});
 
